@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import Home from './components/Home.vue';
+
 
 </script>
 
 <template>
-  <h1 class="text-red-500">This is a test to see if this works properly</h1>
+  <Home />
 </template>
 
 <style scoped></style>

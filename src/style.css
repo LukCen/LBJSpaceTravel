@@ -2,11 +2,14 @@
 
 @theme {
 
-  /* 1 - colors */
+  /* colors */
   --color-dark: #0B0D17;
   --color-light: #D0D6F9;
 
+  /* breakpoints */
 
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
 
 
   --spacing-1600: 128px;

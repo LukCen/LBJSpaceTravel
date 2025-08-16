@@ -10,5 +10,10 @@
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn"
+  },
+  "compilerOptions": {
+    "types": [
+      "vite/client"
+    ]
   }
 }
