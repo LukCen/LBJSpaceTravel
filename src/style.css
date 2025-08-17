@@ -30,6 +30,7 @@
 /* typography */
 :root {
   font-display: swap;
+  overflow: hidden;
 }
 .text-preset-1 {
   font-size: 144px;
@@ -93,4 +94,32 @@
   letter-spacing: 0px;
   font-family: "Barlow", sans-serif;
   font-weight: normal;
+}
+@layer base {
+  img {
+    display: block;
+  }
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+@media (max-width: 767px) {
+  body {
+    background: url("/backgrounds/background-home-mobile.jpg") center/cover;
+  }
+
+}
+
+@media(min-width: 768px) and (max-width: 1439px) {
+  body {
+    background: url("/backgrounds/background-home-tablet.jpg") center/cover;
+  }
+}
+@media(min-width:1440px) {
+  body {
+    background: url("/backgrounds/background-home-desktop.jpg") center/cover;
+  }
 }
