@@ -34,49 +34,49 @@
 }
 .text-preset-1 {
   font-size: 144px;
-  line-height: 171.9%;
+  line-height: normal;
   letter-spacing: 0px;
   font-family: "Bellefair", sans-serif;
 }
 .text-preset-2 {
   font-size: 100px;
-  line-height: 114.6%;
+  line-height: normal;
   letter-spacing: 0px;
   font-family: "Bellefair", sans-serif;
 }
 .text-preset-3 {
   font-size: 56px;
-  line-height: 64.2%;
+  line-height: normal;
   letter-spacing: 0px;
   font-family: "Bellefair", sans-serif;
 }
 .text-preset-4 {
   font-size: 32px;
-  line-height: 36.7%;
+  line-height: normal;
   letter-spacing: 0px;
   font-family: "Bellefair", sans-serif;
 }
 .text-preset-5 {
   font-size: 28px;
-  line-height: 33.6%;
+  line-height: normal;
   letter-spacing: var(--spacing-50);
   font-family: "Barlow Condendsed", sans-serif;
 }
 .text-preset-6 {
   font-size: 28px;
-  line-height: 32.1%;
+  line-height: normal;
   letter-spacing: 0px;
   font-family: "Bellefair", sans-serif;
 }
 .text-preset-7 {
   font-size: 14px;
-  line-height: 16.8%;
+  line-height: normal;
   letter-spacing: var(--spacing-25);
   font-family: "Barlow Condensed", sans-serif;
 }
 .text-preset-8 {
   font-size: 16px;
-  line-height: 19.2%;
+  line-height: normal;
   letter-spacing: var(--spacing-25);
   font-family: "Barlow Condensed", sans-serif;
 }

@@ -20,7 +20,8 @@ const menuEntries = [
 </script>
 <template>
   <!-- mobile nav -->
-  <nav class="mobile-nav flex sticky justify-between min-h-[45px] max-h-[88px] bg-transparent p-5 items-center z-10">
+  <nav
+    class="mobile-nav flex tablet:hidden desktop:hidden sticky justify-between min-h-[45px] max-h-[88px] bg-transparent p-5 items-center z-10">
     <img :src="logo" alt="Page logo" height="48">
     <button class="min-w-fit min-h-fit" @click="safeClick">
       <img v-if="!menuOpen" :src="menu" alt="Open main menu" height="48" width="48">
@@ -28,7 +29,7 @@ const menuEntries = [
     </button>
   </nav>
   <aside :class="{ 'v-active': menuOpen === true, '-right-full': menuOpen === false, ' right-0': menuOpen === true }"
-    class="absolute flex flex-col top-0 w-3/4 h-[100vh] z-2 duration-200">
+    class="absolute flex desktop:hidden flex-col top-0 w-3/4 h-[100vh] z-2 duration-200">
     <ul class="flex flex-col gap-400 relative w-3/4 top-[130px] mx-400">
       <li v-for="entry in menuEntries" class="text-white">
         <router-link class="w-full text-preset-8" :to="entry.path"><span class="font-bold">{{ entry.id }}
@@ -38,14 +39,35 @@ const menuEntries = [
       </li>
     </ul>
   </aside>
+  <!-- desktop -->
+  <nav
+    class="desktop-nav hidden tablet:hidden desktop:flex sticky top-0 justify-between min-h-[45px] h-[136px] bg-transparent items-center z-10">
+    <img :src="logo" alt="Page logo" height="48" class="relative left-400">
+    <ul
+      class="desktop-nav_entries flex gap-800 items-center justify-around w-1/2 h-[calc(100%-var(--spacing-500))] px-400">
+      <li v-for="entry in menuEntries"
+        class="text-white border-transparent border-4 flex items-center justify-center h-full">
+        <router-link class="w-full text-preset-5 flex h-full justify-center items-center gap-200" :to="entry.path">
+          <span class="font-bold uppercase">{{ entry.id }}
+          </span><span class="uppercase">{{ entry.content }}</span></router-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 <style scoped>
-aside {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
+aside, .desktop-nav_entries {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
 }
 nav img {
   max-height: 48px;
   max-width: 48px;
+}
+
+.desktop-nav_entries li:hover {
+  border-bottom: 4px solid var(--color-light);
+}
+.desktop-nav_entries li:has(.router-link-active) {
+  border-bottom: 4px solid var(--color-white);
 }
 </style>
