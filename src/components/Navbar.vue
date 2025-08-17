@@ -10,6 +10,13 @@ const safeClick = useThrottleFn(() => {
   menuOpen.value ? menuOpen.value = false : menuOpen.value = true
 }, 250)
 
+const menuEntries = [
+  { id: '00', path: '/', content: 'Home' },
+  { id: '01', path: '/destination', content: 'Destination' },
+  { id: '02', path: '/crew', content: 'Crew' },
+  { id: '03', path: '/technology', content: 'Technology' }
+]
+
 </script>
 <template>
   <!-- mobile nav -->
@@ -22,7 +29,14 @@ const safeClick = useThrottleFn(() => {
   </nav>
   <aside :class="{ 'v-active': menuOpen === true, '-right-full': menuOpen === false, ' right-0': menuOpen === true }"
     class="absolute flex flex-col top-0 w-3/4 h-[100vh] z-2 duration-200">
-
+    <ul class="flex flex-col gap-400 relative w-3/4 top-[130px] mx-400">
+      <li v-for="entry in menuEntries" class="text-white">
+        <router-link class="w-full text-preset-8" :to="entry.path"><span class="font-bold">{{ entry.id }}
+          </span> {{
+            entry.content
+          }}</router-link>
+      </li>
+    </ul>
   </aside>
 </template>
 <style scoped>
