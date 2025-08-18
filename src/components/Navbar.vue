@@ -42,7 +42,18 @@ const menuEntries = [
     </ul>
   </aside>
   <!-- tablet -->
+  <nav
+    class="tablet-nav hidden tablet:flex desktop:hidden sticky top-0 justify-between min-h-[45px] h-[96px] bg-transparent items-center z-10">
+    <img :src="logo" alt="Page logo" height="48" class="relative left-400">
+    <ul class="tablet-nav_entries flex gap-600 items-center relative justify-between w-4/5 h-full px-400">
 
+      <li v-for="entry in menuEntries" class="text-white relative flex items-center justify-center h-full">
+        <router-link class="w-full text-preset-8 flex h-full justify-center items-center gap-200" :to="entry.path">
+          <span class="font-bold uppercase">{{ entry.id }}
+          </span><span class="uppercase">{{ entry.content }}</span></router-link>
+      </li>
+    </ul>
+  </nav>
 
   <!-- desktop -->
   <nav
@@ -66,7 +77,7 @@ nav img {
   max-height: 48px;
   max-width: 48px;
 }
-aside, .desktop-nav_entries {
+aside, .desktop-nav_entries, .tablet-nav_entries {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(25px);
 }
@@ -80,18 +91,20 @@ aside li:has(.router-link-active)::after {
   background: var(--color-light)
 }
 
-.desktop-nav_entries li:has(.router-link-active)::after, .desktop-nav_entries li:hover::after {
+.desktop-nav_entries li:has(.router-link-active)::after,
+.desktop-nav_entries li:hover::after,
+.tablet-nav_entries li:has(.router-link-active)::after {
   content: '';
   width: 100%;
   height: var(--radius-md);
   position: absolute;
   bottom: 0;
 }
-.desktop-nav_entries li:has(.router-link-active)::after {
+.desktop-nav_entries li:has(.router-link-active)::after,
+.tablet-nav_entries li:has(.router-link-active)::after {
   background: var(--color-white);
 }
 .desktop-nav_entries li:hover::after {
-
   background: var(--color-light);
 }
 </style>
