@@ -37,7 +37,7 @@
 }
 
 .text-preset-1 {
-  @apply font-bellefair text-[80px] tracking-[0px] desktop:text-[144px] desktop:tracking-[0px]
+  @apply font-bellefair text-[80px] tracking-[0px] tablet:text-[144px] desktop:text-[144px] desktop:tracking-[0px]
 }
 .text-preset-2 {
   @apply font-bellefair text-[56px] tracking-[0px] tablet:text-[80px] tablet:tracking-[0px] desktop:text-[96px] desktop:tracking-[0px]
@@ -49,7 +49,7 @@
   @apply font-bellefair text-[18] tracking-[0px] tablet:text-[24px] tablet:tracking-[0px] desktop:text-[32px] desktop:tracking-[0px]
 }
 .text-preset-5 {
-  @apply font-barlow-condensed text-[20px] tracking-[calc(20*0.15)px] desktop:text-[28px] desktop:tracking-[4px]
+  @apply font-barlow-condensed text-[20px] tracking-[calc(20*0.15)px] tablet:text-[28px] desktop:text-[28px] desktop:tracking-[4px]
 }
 .text-preset-6 {
   @apply font-barlow-condensed text-[16px] tracking-[3px] desktop:text-[28px] desktop:tracking-[0px]
