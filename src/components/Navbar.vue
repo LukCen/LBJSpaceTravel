@@ -32,7 +32,7 @@ const menuEntries = [
     class="absolute flex desktop:hidden flex-col top-0 w-3/4 h-[100vh] z-2 duration-200">
     <ul class="flex flex-col gap-400 relative min-h-1/2 w-3/4 top-[130px] mx-400">
       <li v-for="entry in menuEntries" class="text-white flex items-center justify-center relative min-h-400 w-full">
-        <router-link class="w-full h-full flex items-center text-preset-8 gap-200" :to="entry.path"><span
+        <router-link class="w-full h-full flex items-center text-preset-8 gap-200 uppercase" :to="entry.path"><span
             class="font-bold">{{
               entry.id }}
           </span> {{
