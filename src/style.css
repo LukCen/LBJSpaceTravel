@@ -31,60 +31,106 @@
   font-display: swap;
   overflow: hidden;
 }
-.text-preset-1 {
-  font-size: 144px;
-  line-height: normal;
-  letter-spacing: 0px;
-  font-family: "Bellefair", sans-serif;
+/* mobile */
+.text-preset-1, .text-preset-2, .text-preset-3, .text-preset-4 {
+  font-size: 80px;
+  letter-spacing: 0;
+  font-family: "Bellefair", sans-serif
 }
-.text-preset-2 {
-  font-size: 100px;
-  line-height: normal;
-  letter-spacing: 0px;
-  font-family: "Bellefair", sans-serif;
+.text-preset-2, .text-preset-3, .text-preset-4 {
+  font-size: 56px
 }
-.text-preset-3 {
-  font-size: 56px;
-  line-height: normal;
-  letter-spacing: 0px;
-  font-family: "Bellefair", sans-serif;
+.text-preset-3, .text-preset-4 {
+  font-size: 24px
 }
 .text-preset-4 {
-  font-size: 32px;
-  line-height: normal;
-  letter-spacing: 0px;
-  font-family: "Bellefair", sans-serif;
+  font-size: 18px
 }
-.text-preset-5 {
-  font-size: 28px;
-  line-height: normal;
-  letter-spacing: var(--spacing-50);
-  font-family: "Barlow Condendsed", sans-serif;
-}
-.text-preset-6 {
-  font-size: 28px;
-  line-height: normal;
-  letter-spacing: 0px;
-  font-family: "Bellefair", sans-serif;
-}
-.text-preset-7 {
-  font-size: 14px;
-  line-height: normal;
-  letter-spacing: var(--spacing-25);
-  font-family: "Barlow Condensed", sans-serif;
+.text-preset-6, .text-preset-8 {
+  font-size: 16px;
+  letter-spacing: 15%;
+  font-family: "Barlow Condensed", sans-serif
 }
 .text-preset-8 {
-  font-size: 16px;
-  line-height: normal;
-  letter-spacing: var(--spacing-25);
-  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px
 }
 .text-preset-9 {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 180%;
-  letter-spacing: 0px;
-  font-family: "Barlow", sans-serif;
+  letter-spacing: 0;
+  font-family: "Barlow", sans-serif
 }
+/* tablet variants */
+@media(min-width: 768px) {
+  .text-preset-2, .text-preset-3, .text-preset-4 {
+    font-size: 80px;
+    letter-spacing: 0;
+    font-family: "Bellefair", sans-serif
+  }
+  .text-preset-3, .text-preset-4 {
+    font-size: 40px
+  }
+  .text-preset-4 {
+    font-size: 24px
+  }
+  .text-preset-5 {
+    font-size: 20px;
+    letter-spacing: 15%;
+    font-family: "Barlow Condensed", sans-serif
+  }
+  .text-preset-9 {
+    font-size: 16px;
+    letter-spacing: 0;
+    font-family: "Barlow", sans-serif
+  }
+}
+/* desktop variants */
+@media(min-width: 1440px) {
+  .text-preset-1, .text-preset-2, .text-preset-3, .text-preset-4 {
+    font-size: 144px;
+    line-height: normal;
+    letter-spacing: 0;
+    font-family: "Bellefair", sans-serif
+  }
+  .text-preset-2, .text-preset-3, .text-preset-4 {
+    font-size: 100px
+  }
+  .text-preset-3, .text-preset-4 {
+    font-size: 56px
+  }
+  .text-preset-4 {
+    font-size: 32px
+  }
+  .text-preset-5, .text-preset-6 {
+    font-size: 28px;
+    line-height: normal
+  }
+  .text-preset-5 {
+    letter-spacing: var(--spacing-50);
+    font-family: "Barlow Condendsed", sans-serif
+  }
+  .text-preset-6 {
+    letter-spacing: 0;
+    font-family: "Bellefair", sans-serif
+  }
+  .text-preset-7, .text-preset-8 {
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: var(--spacing-25);
+    font-family: "Barlow Condensed", sans-serif
+  }
+  .text-preset-8 {
+    font-size: 16px
+  }
+  .text-preset-9 {
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 0;
+    font-family: "Barlow", sans-serif
+  }
+}
+
+
 @layer base {
   img {
     display: block;
