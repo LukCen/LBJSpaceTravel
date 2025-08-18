@@ -30,24 +30,31 @@ const menuEntries = [
   </nav>
   <aside :class="{ 'v-active': menuOpen === true, '-right-full': menuOpen === false, ' right-0': menuOpen === true }"
     class="absolute flex desktop:hidden flex-col top-0 w-3/4 h-[100vh] z-2 duration-200">
-    <ul class="flex flex-col gap-400 relative w-3/4 top-[130px] mx-400">
-      <li v-for="entry in menuEntries" class="text-white">
-        <router-link class="w-full text-preset-8" :to="entry.path"><span class="font-bold">{{ entry.id }}
+    <ul class="flex flex-col gap-400 relative min-h-1/2 w-3/4 top-[130px] mx-400">
+      <li v-for="entry in menuEntries" class="text-white flex items-center justify-center relative min-h-400 w-full">
+        <router-link class="w-full h-full flex items-center text-preset-8 gap-200" :to="entry.path"><span
+            class="font-bold">{{
+              entry.id }}
           </span> {{
             entry.content
           }}</router-link>
       </li>
     </ul>
   </aside>
+  <!-- tablet -->
+
+
   <!-- desktop -->
   <nav
     class="desktop-nav hidden tablet:hidden desktop:flex sticky top-0 justify-between min-h-[45px] h-[136px] bg-transparent items-center z-10">
     <img :src="logo" alt="Page logo" height="48" class="relative left-400">
+
     <ul
-      class="desktop-nav_entries flex gap-800 items-center justify-around w-1/2 h-[calc(100%-var(--spacing-500))] px-400">
-      <li v-for="entry in menuEntries"
-        class="text-white border-transparent border-4 flex items-center justify-center h-full">
-        <router-link class="w-full text-preset-5 flex h-full justify-center items-center gap-200" :to="entry.path">
+      class="desktop-nav_entries flex gap-800 items-center relative justify-around max-w-1/2 h-[calc(100%-var(--spacing-500))] px-1600">
+      <div class="spacer w-full absolute top-1/2 h-[2px] left-[50px] -translate-x-full z-20 bg-light opacity-50">
+      </div>
+      <li v-for="entry in menuEntries" class="text-white relative flex items-center justify-center h-full">
+        <router-link class="w-full text-preset-6 flex h-full justify-center items-center gap-200" :to="entry.path">
           <span class="font-bold uppercase">{{ entry.id }}
           </span><span class="uppercase">{{ entry.content }}</span></router-link>
       </li>
@@ -55,19 +62,36 @@ const menuEntries = [
   </nav>
 </template>
 <style scoped>
-aside, .desktop-nav_entries {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(25px);
-}
 nav img {
   max-height: 48px;
   max-width: 48px;
 }
-
-.desktop-nav_entries li:hover {
-  border-bottom: 4px solid var(--color-light);
+aside, .desktop-nav_entries {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
 }
-.desktop-nav_entries li:has(.router-link-active) {
-  border-bottom: 4px solid var(--color-white);
+
+aside li:has(.router-link-active)::after {
+  content: '';
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background: var(--color-light)
+}
+
+.desktop-nav_entries li:has(.router-link-active)::after, .desktop-nav_entries li:hover::after {
+  content: '';
+  width: 100%;
+  height: var(--radius-md);
+  position: absolute;
+  bottom: 0;
+}
+.desktop-nav_entries li:has(.router-link-active)::after {
+  background: var(--color-white);
+}
+.desktop-nav_entries li:hover::after {
+
+  background: var(--color-light);
 }
 </style>
