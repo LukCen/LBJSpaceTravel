@@ -77,6 +77,8 @@ body {
   min-height: 100vh;
   overflow: hidden;
   position: relative;
+  transition: 0.2s ease-in-out opacity;
+  opacity: 1;
 }
 @media (max-width: 767px) {
   body:has(main.home) {

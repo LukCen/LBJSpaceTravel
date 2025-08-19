@@ -14,7 +14,7 @@
     <section
       class="button desktop:relative flex-1 h-1/2 w-full flex justify-center items-center desktop:justify-end tablet:p-600 desktop:bottom-1600">
       <router-link to="/destination"
-        class="btn-explore bg-white text-dark relative text-preset-4 rounded-[50%] p-[88px] tablet:h-[250px] tablet:w-[250px] uppercase text-center flex items-center justify-center">Explore</router-link>
+        class="btn-explore bg-white text-dark relative text-preset-4 rounded-[50%] w-[144px] h-[144px] tablet:h-[250px] tablet:w-[250px] uppercase text-center flex items-center justify-center">Explore</router-link>
     </section>
   </main>
 </template>
