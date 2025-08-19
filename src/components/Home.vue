@@ -1,5 +1,6 @@
 <template>
-  <main class="flex flex-col desktop:flex-row items-center flex-1 h-[calc(100%-96px)] desktop:items-end desktop:p-1600">
+  <main
+    class="home flex flex-col desktop:flex-row items-center flex-1 h-[calc(100%-96px)] desktop:items-end desktop:p-1600">
     <section
       class="text desktop:relative flex flex-col flex-1 h-1/2 items-center tablet:justify-center gap-300 p-300 tablet:p-1600 desktop:bottom-1600">
       <h1 class="flex flex-col text-center desktop:w-2/3 desktop:text-left desktop:gap-400">

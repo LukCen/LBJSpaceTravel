@@ -1,4 +1,4 @@
 <template>
-  This will be the Technology page once it's ready
-  <button class="bg-red-600 text-white font-bold px-8 py-2" @click="$router.back()">GO BACK</button>
+  <main class="technology flex flex-col h-[calc(100%-96px)]"></main>
 </template>
+<style scoped></style>
