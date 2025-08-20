@@ -77,22 +77,27 @@ body {
   min-height: 100vh;
   overflow: hidden;
   position: relative;
-  transition: 0.2s ease-in-out opacity;
+  transition: 0.75s ease-in-out opacity;
   opacity: 1;
 }
 main {
   overflow-y: scroll;
 }
+
+
 @media (max-width: 767px) {
   body:has(main.home) {
     background: url("/backgrounds/background-home-mobile.jpg") center/cover;
   }
+
   body:has(main.destination) {
     background: url("../src/assets/destination/background-destination-mobile.jpg") center/cover;
   }
+
   body:has(main.crew) {
     background: url("../src/assets/crew/background-crew-mobile.jpg") center/cover;
   }
+
   body:has(main.technology) {
     background: url("../src/assets/tech/background-technology-mobile.jpg") center/cover;
   }
@@ -102,26 +107,33 @@ main {
   body:has(main.home) {
     background: url("/backgrounds/background-home-tablet.jpg") center/cover;
   }
+
   body:has(main.destination) {
     background: url("../src/assets/destination/background-destination-tablet.jpg") center/cover;
   }
+
   body:has(main.crew) {
     background: url("../src/assets/crew/background-crew-tablet.jpg") center/cover;
   }
+
   body:has(main.technology) {
     background: url("../src/assets/tech/background-technology-tablet.jpg") center/cover;
   }
 }
+
 @media(min-width:1440px) {
   body:has(main.home) {
     background: url("/backgrounds/background-home-desktop.jpg") center/cover;
   }
+
   body:has(main.destination) {
     background: url("../src/assets/destination/background-destination-desktop.jpg") center/cover;
   }
+
   body:has(main.crew) {
     background: url("../src/assets/crew/background-crew-desktop.jpg") center/cover;
   }
+
   body:has(main.technology) {
     background: url("../src/assets/tech/background-technology-desktop.jpg") center/cover;
   }
