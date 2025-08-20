@@ -44,16 +44,17 @@ const activeId = ref(0)
 <template>
   <main
     class="destination relative flex flex-col h-[calc(100%-96px)] w-full gap-300 p-600 tablet:p-1200 desktop:p-1200 desktop:items-center desktop:justify-center">
-    <h1 class="text-preset-5 uppercase text-white text-center desktop:text-left"><span
+    <h1 class="text-preset-5 uppercase text-white text-center desktop:text-left desktop:relative desktop:top-o"><span
         class="text-gray-300 font-bold">01
       </span>Pick your destination</h1>
     <section
-      class="content flex flex-col desktop:flex-row items-center desktop:justify-center gap-300 text-white desktop:gap-1600 desktop:min-h-[500px] desktop:min-w-[1600px]">
+      class="content flex flex-col desktop:flex-row items-center desktop:justify-center gap-300 text-white desktop:gap-1600 desktop:min-h-[750px] desktop:min-w-[1600px]">
       <div class="img flex">
         <img :src="data[activeId].img" alt="" class="scale-75 desktop:scale-100">
 
       </div>
-      <div class="text w-full desktop:max-w-[500px] text-center desktop:text-left">
+      <div
+        class="text desktop:flex desktop:flex-col gap-300 w-full desktop:max-w-[500px] text-center desktop:text-left">
         <ul class="flex justify-center gap-300 desktop:justify-start">
           <li v-for="item in data"><button :id="item.id" @click="activeId = item.id"
               :class="{ isActive: activeId === item.id }"
