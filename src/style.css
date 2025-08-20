@@ -52,7 +52,7 @@
   @apply font-barlow-condensed text-[20px] tracking-[calc(20*0.15)px] tablet:text-[28px] desktop:text-[28px] desktop:tracking-[4px]
 }
 .text-preset-6 {
-  @apply font-barlow-condensed text-[16px] tracking-[3px] desktop:text-[28px] desktop:tracking-[0px]
+  @apply font-bellefair text-[28px] tracking-[3px] desktop:text-[28px] desktop:tracking-[0px]
 }
 
 .text-preset-7 {
@@ -60,7 +60,7 @@
 }
 
 .text-preset-8 {
-  @apply font-barlow-condensed text-[14px] tracking-[2px] desktop:text-[16px] desktop:tracking-[2px]
+  @apply font-barlow-condensed text-[16px] tracking-[2px] desktop:text-[18px] desktop:tracking-[2px]
 }
 
 .text-preset-9 {
