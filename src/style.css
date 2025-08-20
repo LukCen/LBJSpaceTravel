@@ -33,7 +33,7 @@
 /* typography */
 :root {
   font-display: swap;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .text-preset-1 {
@@ -79,6 +79,9 @@ body {
   position: relative;
   transition: 0.2s ease-in-out opacity;
   opacity: 1;
+}
+main {
+  overflow-y: scroll;
 }
 @media (max-width: 767px) {
   body:has(main.home) {

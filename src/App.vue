@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue';
-
 </script>
-
 <template>
   <Navbar />
-  <transition name="fade" mode="out-in">
-    <RouterView />
-  </transition>
+  <RouterView v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </RouterView>
 </template>
 
 <style>

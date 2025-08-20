@@ -42,10 +42,10 @@ const activeId = ref(0)
 
 </script>
 <template>
-  <main class="destination relative flex flex-col h-[calc(100%-96px)] w-full gap-300 p-300">
+  <main class="destination relative flex flex-col h-[calc(100%-96px)] w-full gap-300 p-600">
     <h1 class="text-preset-6 uppercase text-white text-center desktop:text-left">01 Pick your destination</h1>
     <section class="content flex flex-col desktop:flex-row items-center gap-300 text-white">
-      <img :src="data[activeId].img" alt="" class="transition-opacity">
+      <img :src="data[activeId].img" alt="" class="scale-75 desktop:scale-100">
       <ul class="flex gap-300">
         <li v-for="item in data"><button :id="item.id" @click="activeId = item.id"
             :class="{ isActive: activeId === item.id }"
