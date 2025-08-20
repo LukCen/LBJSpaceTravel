@@ -2,7 +2,7 @@
 import logo from "../assets/shared/logo.svg"
 import menu from "../assets/shared/icon-hamburger.svg"
 import menuClose from "../assets/shared/icon-close.svg"
-import { onMounted, ref } from "vue"
+import { ref } from "vue"
 import { useThrottleFn } from "@vueuse/core"
 
 const menuOpen = ref(false)
@@ -10,15 +10,13 @@ const safeClick = useThrottleFn(() => {
   menuOpen.value ? menuOpen.value = false : menuOpen.value = true
 }, 250)
 
-
-
 const menuEntries = [
   { id: '00', path: '/', content: 'Home' },
   { id: '01', path: '/destination', content: 'Destination' },
   { id: '02', path: '/crew', content: 'Crew' },
   { id: '03', path: '/technology', content: 'Technology' }
 ]
-const isLoaded = ref(false)
+
 
 
 </script>
