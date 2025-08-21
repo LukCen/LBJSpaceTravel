@@ -38,7 +38,7 @@ const data = [
 const activeId = ref(0)
 </script>
 <template>
-  <main class="crew flex flex-col h-[calc(100%-96px)] gap-300 text-white p-600 desktop:p-1600">
+  <main class="crew flex flex-col h-[calc(100%-96px)] gap-300 text-white p-600 desktop:px-1600">
 
     <section
       class="content h-full flex flex-col desktop:flex desktop:flex-row items-center desktop:justify-center gap-600 text-white desktop:gap-1600 desktop:min-h-[750px] desktop:min-w-[1600px]">
