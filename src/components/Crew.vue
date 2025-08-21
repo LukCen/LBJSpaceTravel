@@ -1,39 +1,67 @@
 <script setup>
+import { ref } from "vue"
 import commander from "../assets/crew/image-douglas-hurley.webp"
 import missionSpec from "../assets/crew/image-mark-shuttleworth.webp"
 import pilot from "../assets/crew/image-victor-glover.webp"
 import engineer from "../assets/crew/image-anousheh-ansari.webp"
-import { ref } from "vue"
 
 const data = [
   {
     id: 0,
     role: "Commander",
     name: "Douglas Hurley",
-    desc: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
+    desc: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
+    img: commander
   },
   {
     id: 1,
     role: "Mission Specialist",
     name: "Mark Shuttleworth",
-    desc: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
+    desc: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
+    img: missionSpec
   },
   {
     id: 2,
     role: "Pilot",
     name: "Victor Glover",
-    desc: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer."
+    desc: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
+    img: pilot
   },
   {
     id: 3,
     role: "Flight Engineer",
     name: "Anousheh Ansari",
-    desc: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer."
+    desc: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
+    img: engineer
   }
 ]
 const activeId = ref(0)
 </script>
 <template>
-  <main class="crew flex flex-col h-[calc(100%-96px)]"></main>
+  <main class="crew flex flex-col h-[calc(100%-96px)] gap-300 text-white p-600 desktop:p-1600">
+    <h1
+      class="w-full inline-flex text-preset-6 uppercase text-center justify-center desktop:justify-start desktop:text-left font-barlow-condensed gap-100">
+      <span class="font-bold font-barlow-condensed opacity-25">02</span>Meet
+      your crew
+    </h1>
+    <section
+      class="content h-full flex flex-col desktop:flex-row items-center desktop:justify-center gap-600 text-white desktop:gap-1600  desktop:min-h-[750px] desktop:min-w-[1600px]">
+      <div class="text flex flex-col items-center desktop:items-start gap-300">
+        <h2 class="opacity-50 text-preset-4 uppercase">{{ data[activeId].role }}</h2>
+        <span class="text-preset-3 uppercase">{{ data[activeId].name }}</span>
+        <p class="text-preset-9 text-light text-center desktop:text-left">{{ data[activeId].desc }}</p>
+      </div>
+      <div class="pagination flex gap-300">
+        <button v-for="item in data" :id="item.id" @click="activeId = item.id"
+          class="w-[10px] h-[10px] rounded-[50%] bg-white cursor-pointer"
+          :class="{ isActive: activeId === item.id }"></button>
+      </div>
+      <img :src="data[activeId].img" alt="" class="max-h-1/2 desktop:max-h-auto">
+    </section>
+  </main>
 </template>
-<style scoped></style>
+<style scoped>
+.isActive {
+  background: gray;
+}
+</style>

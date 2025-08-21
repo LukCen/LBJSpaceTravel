@@ -46,13 +46,13 @@
   @apply font-bellefair text-[24px] tracking-[0px] tablet:text-[40px] tablet:tracking-[0px] desktop:text-[56px] desktop:tracking-[0px]
 }
 .text-preset-4 {
-  @apply font-bellefair text-[18] tracking-[0px] tablet:text-[24px] tablet:tracking-[0px] desktop:text-[32px] desktop:tracking-[0px]
+  @apply font-bellefair text-[18px] tracking-[0px] tablet:text-[24px] tablet:tracking-[0px] desktop:text-[32px] desktop:tracking-[0px]
 }
 .text-preset-5 {
   @apply font-barlow-condensed text-[20px] tracking-[calc(20*0.15)px] tablet:text-[28px] desktop:text-[28px] desktop:tracking-[4px]
 }
 .text-preset-6 {
-  @apply font-bellefair text-[28px] tracking-[3px] desktop:text-[28px] desktop:tracking-[0px]
+  @apply font-barlow-condensed desktop:font-bellefair text-[28px] tracking-[3px] desktop:text-[28px] desktop:tracking-[0px]
 }
 
 .text-preset-7 {
