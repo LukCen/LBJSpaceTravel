@@ -63,8 +63,8 @@ const menuEntries = [
     <img :src="logo" alt="Page logo" height="48" class="relative left-400">
 
     <ul
-      class="desktop-nav_entries flex gap-800 items-center relative justify-around max-w-1/2 h-[calc(100%-var(--spacing-500))] px-1600">
-      <div class="spacer w-full absolute top-1/2 h-[2px] left-[50px] -translate-x-full z-20 bg-light opacity-50">
+      class="desktop-nav_entries flex gap-400 items-center relative justify-around max-w-auto w-1/2 h-[calc(100%-var(--spacing-500))] px-1200">
+      <div class="spacer w-10/12 absolute top-1/2 h-[2px] left-[50px] -translate-x-full z-20 bg-light opacity-50">
       </div>
       <li v-for="entry in menuEntries" class="text-white relative flex items-center justify-center h-full">
         <router-link class="w-full text-preset-6 flex h-full justify-center items-center gap-200" :to="entry.path">
