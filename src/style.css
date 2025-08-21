@@ -84,6 +84,9 @@ main {
   overflow-y: scroll;
 }
 
+h1 {
+  font-family: var(--font-barlow-condensed), sans-serif !important;
+}
 
 @media (max-width: 767px) {
   body:has(main.home) {
