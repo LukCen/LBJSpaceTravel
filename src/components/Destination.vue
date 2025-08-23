@@ -45,7 +45,7 @@ const activeId = ref(0)
   <main
     class="destination relative flex flex-col min-h-[calc(100%-96px)] w-full gap-300 p-600 tablet:p-1200 desktop:px-1200 desktop:py-0 desktop:items-center desktop:justify-center">
     <section
-      class="content flex flex-col items-center desktop:justify-center gap-300 text-white desktop:gap-1600 desktop:min-h-[750px] desktop:max-w-[75%]">
+      class="content flex flex-col items-center desktop:justify-center gap-300 text-white desktop:gap-1600 desktop:min-h-[800px] desktop:max-w-[80%]">
       <h1 class="w-full text-preset-5 uppercase text-white text-center desktop:text-left desktop:relative">
         <span class="text-superlight font-bold">01
         </span>Pick your destination

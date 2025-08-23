@@ -31,33 +31,37 @@ const data = [
     id: 3,
     role: "Flight Engineer",
     name: "Anousheh Ansari",
-    desc: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
+    desc: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
     img: engineer
   }
 ]
 const activeId = ref(0)
 </script>
 <template>
-  <main class="crew flex flex-col h-[calc(100%-96px)] gap-300 text-white p-600 desktop:px-1600">
-
+  <main class="crew flex flex-col h-[calc(100%-96px)] gap-300 text-white p-600 desktop:px-1600 desktop:py-0">
     <section
-      class="content h-full flex flex-col desktop:flex desktop:flex-row items-center desktop:justify-center gap-600 text-white desktop:gap-1600 desktop:min-h-[750px] desktop:min-w-[1600px]">
-      <div class="text flex flex-col items-center desktop:items-start gap-300 tablet:w-3/4 desktop:max-w-[750px]">
+      class="content h-full flex flex-col desktop:flex-row items-center desktop:justify-center gap-600 text-white desktop:gap-1600 desktop:min-h-[800px] desktop:min-w-[1600px]">
+      <div class="text flex flex-col items-center desktop:items-start gap-600 tablet:w-3/4 desktop:max-w-[80%]">
         <h1
           class="w-full inline-flex text-preset-6 uppercase text-center justify-center items-center desktop:justify-start desktop:text-left font-barlow-condensed gap-100">
           <span class="font-bold opacity-50 h-full inline-flex">02</span><span class="inline-flex">Meet
             your crew</span>
         </h1>
-        <h2 class="opacity-60 text-preset-4 uppercase">{{ data[activeId].role }}</h2>
-        <span class="name text-preset-3 uppercase">{{ data[activeId].name }}</span>
-        <p class="desc text-preset-9 text-light text-center desktop:text-left">{{ data[activeId].desc }}</p>
-        <div class="pagination flex gap-300">
-          <button v-for="item in data" :id="item.id" @click="activeId = item.id"
-            class="w-[10px] h-[10px] rounded-[50%] bg-white cursor-pointer"
-            :class="{ isActive: activeId === item.id }"></button>
+        <div class="content flex flex-col desktop:flex-row w-full gap-200 items-center">
+          <div class="text flex flex-col gap-300 items-center desktop:items-start desktop:h-full">
+            <h2 class="opacity-60 text-preset-4 uppercase">{{ data[activeId].role }}</h2>
+            <span class="name text-preset-3 uppercase">{{ data[activeId].name }}</span>
+            <p class="desc text-preset-9 text-light text-center desktop:text-left">{{ data[activeId].desc }}</p>
+            <div class="pagination flex gap-300">
+              <button v-for="item in data" :id="item.id" @click="activeId = item.id"
+                class="w-[10px] h-[10px] rounded-[50%] bg-white cursor-pointer"
+                :class="{ isActive: activeId === item.id }"></button>
+            </div>
+
+          </div>
+          <img :src="data[activeId].img" alt="" class="max-h-1/2 tablet:max-h-auto desktop:max-h-auto">
         </div>
       </div>
-      <img :src="data[activeId].img" alt="" class="max-h-1/2 tablet:max-h-auto desktop:max-h-auto">
     </section>
   </main>
 </template>
