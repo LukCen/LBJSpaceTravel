@@ -5,7 +5,7 @@
   /* colors */
   --color-dark: #0B0D17;
   --color-light: #D0D6F9;
-
+  --color-superlight: rgba(255, 255, 255, 0.6);
   /* breakpoints */
 
   --breakpoint-tablet: 768px;

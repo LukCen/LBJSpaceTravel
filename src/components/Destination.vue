@@ -43,39 +43,41 @@ const activeId = ref(0)
 </script>
 <template>
   <main
-    class="destination relative flex flex-col h-[calc(100%-96px)] w-full gap-300 p-600 tablet:p-1200 desktop:p-1200 desktop:items-center desktop:justify-center">
-    <h1 class="text-preset-5 uppercase text-white text-center desktop:text-left desktop:relative desktop:top-o"><span
-        class="text-gray-300 font-bold">01
-      </span>Pick your destination</h1>
+    class="destination relative flex flex-col min-h-[calc(100%-96px)] w-full gap-300 p-600 tablet:p-1200 desktop:px-1200 desktop:py-0 desktop:items-center desktop:justify-center">
     <section
-      class="content flex flex-col desktop:flex-row items-center desktop:justify-center gap-300 text-white desktop:gap-1600 desktop:min-h-[750px] desktop:min-w-[1600px]">
-      <div class="img flex">
-        <img :src="data[activeId].img" alt="" class="scale-75 desktop:scale-100">
-
-      </div>
-      <div
-        class="text desktop:flex desktop:flex-col gap-300 w-full desktop:max-w-[500px] text-center desktop:text-left">
-        <ul class="flex justify-center gap-300 desktop:justify-start">
-          <li v-for="item in data"><button :id="item.id" @click="activeId = item.id"
-              :class="{ isActive: activeId === item.id }"
-              class="w-full text-light uppercase text-preset-8 cursor-pointer pb-100 border-b-2 border-transparent p-1">{{
-                item.planet
-              }}</button>
-          </li>
-        </ul>
-        <h2 class="text-preset-2 uppercase">{{ data[activeId].planet }}</h2>
-        <p class="text-preset-9">{{ data[activeId].desc }}</p>
-        <hr class="my-8 border-light">
-        <div class="flex gap-400 flex-col tablet:flex-row desktop:h-full desktop:flex-row">
-          <div class="flex flex-1/2 flex-col gap-300">
-            <span class="text-preset-7 uppercase text-light">Avg. Distance</span>
-            <span class="text-preset-6 uppercase">{{ data[activeId].distance }}</span>
-          </div>
-          <div class="flex flex-1/2 flex-col gap-300">
-            <span class="text-preset-7 uppercase text-light">Est. Travel Time</span>
-            <span class="text-preset-6 uppercase">{{ data[activeId].travel_time }}</span>
+      class="content flex flex-col items-center desktop:justify-center gap-300 text-white desktop:gap-1600 desktop:min-h-[750px] desktop:max-w-[75%]">
+      <h1 class="w-full text-preset-5 uppercase text-white text-center desktop:text-left desktop:relative">
+        <span class="text-superlight font-bold">01
+        </span>Pick your destination
+      </h1>
+      <div class="content flex flex-col w-full desktop:flex-row gap-600">
+        <div class="img flex justify-center flex-2/4">
+          <img :src="data[activeId].img" alt="" class="scale-75 aspect-square">
+        </div>
+        <div class="text flex-2/4 desktop:flex desktop:flex-col gap-300 w-full text-center desktop:text-left">
+          <ul class="flex justify-center gap-300 desktop:justify-start">
+            <li v-for="item in data"><button :id="item.id" @click="activeId = item.id"
+                :class="{ isActive: activeId === item.id }"
+                class="w-full text-light uppercase text-preset-8 cursor-pointer pb-100 border-b-2 border-transparent p-1">{{
+                  item.planet
+                }}</button>
+            </li>
+          </ul>
+          <h2 class="text-preset-2 uppercase">{{ data[activeId].planet }}</h2>
+          <p class="text-preset-9">{{ data[activeId].desc }}</p>
+          <hr class="my-8 border-light">
+          <div class="flex gap-400 flex-col tablet:flex-row desktop:h-full desktop:flex-row">
+            <div class="flex flex-1/2 flex-col gap-300">
+              <span class="text-preset-7 uppercase text-light">Avg. Distance</span>
+              <span class="text-preset-6 uppercase">{{ data[activeId].distance }}</span>
+            </div>
+            <div class="flex flex-1/2 flex-col gap-300">
+              <span class="text-preset-7 uppercase text-light">Est. Travel Time</span>
+              <span class="text-preset-6 uppercase">{{ data[activeId].travel_time }}</span>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
   </main>
