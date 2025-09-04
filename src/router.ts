@@ -59,7 +59,7 @@ async function preloadAssets(urls: string[]) {
   )
 }
 
-router.beforeEach(async (to, from, next) => {
+router.beforeEach(async (to, _from, next) => {
   const routeAssets: Record<string, string[]> = {
     '/destination': [
       destinationBgMobile,
