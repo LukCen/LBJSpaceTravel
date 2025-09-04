@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import moon from "../assets/destination/image-moon.webp"
 import mars from "../assets/destination/image-mars.webp"
@@ -37,6 +37,7 @@ const data = [
     travel_time: "7 years",
     img: titan
   }
+
 ]
 const activeId = ref(0)
 
@@ -46,6 +47,7 @@ const activeId = ref(0)
     class="destination relative flex flex-col min-h-[calc(100%-96px)] w-full gap-300 p-600 tablet:p-1200 desktop:px-1200 desktop:py-0 desktop:items-center desktop:justify-center">
     <section
       class="content flex flex-col items-center desktop:justify-center gap-300 text-white desktop:gap-1600 desktop:min-h-[800px] desktop:max-w-[80%]">
+      <!-- view title -->
       <h1 class="w-full text-preset-5 uppercase text-white text-center desktop:text-left desktop:relative">
         <span class="text-superlight font-bold">01
         </span>Pick your destination
@@ -55,14 +57,16 @@ const activeId = ref(0)
           <img :src="data[activeId].img" alt="" class="scale-75 aspect-square">
         </div>
         <div class="text flex-2/4 desktop:flex desktop:flex-col gap-300 w-full text-center desktop:text-left">
+          <!-- nav/pagination -->
           <ul class="flex justify-center gap-300 desktop:justify-start">
-            <li v-for="item in data"><button :id="item.id" @click="activeId = item.id"
+            <li v-for="item in data"><button :id="String(item.id)" @click="activeId = item.id"
                 :class="{ isActive: activeId === item.id }"
                 class="w-full text-light uppercase text-preset-8 cursor-pointer pb-100 border-b-2 border-transparent p-1">{{
                   item.planet
                 }}</button>
             </li>
           </ul>
+          <!-- actual text (this probably should have its own container) -->
           <h2 class="text-preset-2 uppercase">{{ data[activeId].planet }}</h2>
           <p class="text-preset-9">{{ data[activeId].desc }}</p>
           <hr class="my-8 border-light">

@@ -42,11 +42,13 @@ const activeId = ref(0)
     <section
       class="content h-full flex flex-col desktop:flex-row items-center desktop:justify-center gap-600 text-white desktop:gap-1600 desktop:min-h-[800px] desktop:min-w-[1600px]">
       <div class="text flex flex-col items-center desktop:items-start gap-600 tablet:w-3/4 desktop:max-w-[80%]">
+        <!-- view title -->
         <h1
           class="w-full inline-flex text-preset-6 uppercase text-center justify-center items-center desktop:justify-start desktop:text-left font-barlow-condensed gap-100">
           <span class="font-bold opacity-50 h-full inline-flex">02</span><span class="inline-flex">Meet
             your crew</span>
         </h1>
+        <!-- box with content inside -->
         <div class="content flex flex-col desktop:flex-row w-full gap-200 items-center">
           <div class="text flex flex-col gap-300 items-center desktop:items-start desktop:h-full">
             <h2 class="opacity-60 text-preset-4 uppercase">{{ data[activeId].role }}</h2>
@@ -59,7 +61,8 @@ const activeId = ref(0)
             </div>
 
           </div>
-          <img :src="data[activeId].img" alt="" class="max-h-1/2 tablet:max-h-auto desktop:max-h-auto">
+          <img :src="data[activeId].img" alt="" class="max-h-1/2 tablet:max-h-auto desktop:max-h-auto"
+            fetchpriority="high">
         </div>
       </div>
     </section>

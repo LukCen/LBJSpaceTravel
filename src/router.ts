@@ -4,6 +4,8 @@ import Destination from "./components/Destination.vue";
 import Crew from "./components/Crew.vue";
 import Technology from "./components/Technology.vue";
 
+
+
 const routes = [
   { path: '/', component: Home },
   { path: '/destination', component: Destination },
@@ -18,3 +20,12 @@ export const router = createRouter({
     return { top: 0 }
   }
 })
+
+
+// router.beforeEach(async (to, from, next) => {
+//   const routeAssets = {
+//     '/destination': [
+
+//     ]
+//   }
+// })

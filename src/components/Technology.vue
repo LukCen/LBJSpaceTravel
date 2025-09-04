@@ -38,10 +38,12 @@ const activeId = ref(0)
 <template>
   <main
     class="technology flex flex-col gap-300 h-[calc(100%-96px)] text-white items-center desktop:justify-center desktop:py-600">
+    <!-- view title -->
     <h1 class="text-preset-6 uppercase inline-flex gap-300">
       <span class="opacity-50">03</span>
       <span>Space launch 101</span>
     </h1>
+    <!-- box with content -->
     <div class="content flex flex-col gap-300 items-center desktop:flex-row-reverse">
       <img :src="isTablet ? data[activeId].imgMobile : data[activeId].imgDesktop" alt="" class="w-full desktop:w-auto">
       <div class="pagination flex gap-300 z-10 desktop:flex-col desktop:order-1">
