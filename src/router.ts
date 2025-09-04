@@ -31,6 +31,9 @@ import capsulePortrait from "./assets/tech/image-space-capsule-portrait.jpg"
 import capsuleLandscape from "./assets/tech/image-space-capsule-landscape.jpg"
 import spaceportPortrait from "./assets/tech/image-spaceport-portrait.jpg"
 import spaceportLandscape from "./assets/tech/image-spaceport-landscape.jpg"
+
+// loading indicator
+import { isPreloading } from "./main";
 const routes = [
   { path: '/', component: Home },
   { path: '/destination', component: Destination },
@@ -58,7 +61,7 @@ async function preloadAssets(urls: string[]) {
     })
   )
 }
-
+// navigation guard - preloads the assets used in each route before moving to it, to prevent flashing of content
 router.beforeEach(async (to, _from, next) => {
   const routeAssets: Record<string, string[]> = {
     '/destination': [
@@ -89,13 +92,18 @@ router.beforeEach(async (to, _from, next) => {
       capsuleLandscape,
       spaceportPortrait,
       spaceportLandscape
-
     ]
   }
 
   const assets = routeAssets[to.path]
   if (assets) {
-    await preloadAssets(assets)
+    isPreloading.value = true
+    try {
+      await preloadAssets(assets)
+
+    } finally {
+      isPreloading.value = false
+    }
   }
   next()
 })

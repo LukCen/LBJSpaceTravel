@@ -4,6 +4,7 @@ import moon from "../assets/destination/image-moon.webp"
 import mars from "../assets/destination/image-mars.webp"
 import europa from "../assets/destination/image-europa.webp"
 import titan from "../assets/destination/image-titan.webp"
+import { isPreloading } from '../main';
 const data = [
   {
     id: 0,
@@ -43,7 +44,7 @@ const activeId = ref(0)
 
 </script>
 <template>
-  <main
+  <main :class="{ 'animate-pulse': isPreloading === true }"
     class="destination relative flex flex-col min-h-[calc(100%-96px)] w-full gap-300 p-600 tablet:p-1200 desktop:px-1200 desktop:py-0 desktop:items-center desktop:justify-center">
     <section
       class="content flex flex-col items-center desktop:justify-center gap-300 text-white desktop:gap-1600 desktop:min-h-[800px] desktop:max-w-[80%]">

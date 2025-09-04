@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import { isPreloading } from '../main';
+
+</script>
+
 <template>
-  <main
+  <main :class="{ 'animate-pulse': isPreloading === true }"
     class="home flex flex-col desktop:flex-row items-center flex-1 h-[calc(100%-96px)] desktop:items-end desktop:p-1600">
     <section
       class="text desktop:relative flex flex-col flex-1 h-1/2 items-center tablet:justify-center gap-300 p-300 tablet:p-1600 desktop:bottom-1600">

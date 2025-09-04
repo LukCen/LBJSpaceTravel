@@ -7,6 +7,7 @@ import spaceportDesktop from "../assets/tech/image-spaceport-portrait.jpg"
 import capsuleMobile from "../assets/tech/image-space-capsule-landscape.jpg"
 import capsuleDesktop from "../assets/tech/image-space-capsule-portrait.jpg"
 import { useMediaQuery } from '@vueuse/core';
+import { isPreloading } from '../main';
 
 const data = [
   {
@@ -36,7 +37,7 @@ const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1439px)')
 const activeId = ref(0)
 </script>
 <template>
-  <main
+  <main :class="{ 'animate-pulse': isPreloading === true }"
     class="technology flex flex-col gap-300 h-[calc(100%-96px)] text-white items-center desktop:justify-center desktop:py-600">
     <!-- view title -->
     <h1 class="text-preset-6 uppercase inline-flex gap-300">
