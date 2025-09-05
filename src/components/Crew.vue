@@ -51,18 +51,28 @@ const activeId = ref(0)
         <!-- box with content inside -->
         <div class="content flex flex-col desktop:flex-row w-full gap-200 items-center">
           <div class="text flex flex-col gap-300 items-center desktop:items-start desktop:h-full">
-            <h2 class="opacity-60 text-preset-4 uppercase">{{ data[activeId].role }}</h2>
-            <span class="name text-preset-3 uppercase">{{ data[activeId].name }}</span>
-            <p class="desc text-preset-9 text-light text-center desktop:text-left">{{ data[activeId].desc }}</p>
+            <!-- text contents - yes these should be in a container together but this'll do for now -->
+            <transition name="fade" mode="out-in">
+              <span :key="activeId" class="name text-preset-3 uppercase">{{ data[activeId].name }}</span>
+            </transition>
+            <transition name="fade" mode="out-in">
+              <h2 :key="activeId" class="opacity-60 text-preset-4 uppercase">{{ data[activeId].role }}</h2>
+            </transition>
+            <transition name="fade" mode="out-in">
+              <p :key="activeId" class="desc text-preset-9 text-light text-center desktop:text-left">{{
+                data[activeId].desc }}</p>
+            </transition>
+            <!-- pagination -->
             <div class="pagination flex gap-300">
               <button v-for="item in data" :id="item.id" @click="activeId = item.id"
                 class="w-[10px] h-[10px] rounded-[50%] bg-white cursor-pointer"
                 :class="{ isActive: activeId === item.id }"></button>
             </div>
-
           </div>
-          <img :src="data[activeId].img" alt="" class="max-h-1/2 tablet:max-h-auto desktop:max-h-auto"
-            fetchpriority="high">
+          <transition name="fade" mode="out-in">
+            <img :key="activeId" :src="data[activeId].img" alt="" class="max-h-1/2 tablet:max-h-auto desktop:max-h-auto"
+              fetchpriority="high">
+          </transition>
         </div>
       </div>
     </section>
@@ -71,5 +81,12 @@ const activeId = ref(0)
 <style scoped>
 .isActive {
   background: gray;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -34,7 +34,7 @@ const data = [
 ]
 
 const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1439px)')
-const activeId = ref(0)
+const activeId = ref(0) // matches to the array above - used for controlling content displayed below
 </script>
 <template>
   <main :class="{ 'animate-pulse': isPreloading === true }"
