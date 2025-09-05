@@ -54,9 +54,11 @@ const activeId = ref(0)
         </span>Pick your destination
       </h1>
       <div class="content flex flex-col w-full desktop:flex-row gap-600">
-        <div class="img flex justify-center flex-2/4">
-          <img :src="data[activeId].img" alt="" class="scale-75 aspect-square">
-        </div>
+        <transition name="fade" mode="out-in">
+          <div :key="activeId" class="img flex justify-center flex-2/4">
+            <img :src="data[activeId].img" alt="" class="scale-75 aspect-square">
+          </div>
+        </transition>
         <div class="text flex-2/4 desktop:flex desktop:flex-col gap-300 w-full text-center desktop:text-left">
           <!-- nav/pagination -->
           <ul class="flex justify-center gap-300 desktop:justify-start">
@@ -68,19 +70,27 @@ const activeId = ref(0)
             </li>
           </ul>
           <!-- actual text (this probably should have its own container) -->
-          <h2 class="text-preset-2 uppercase">{{ data[activeId].planet }}</h2>
-          <p class="text-preset-9">{{ data[activeId].desc }}</p>
-          <hr class="my-8 border-light">
-          <div class="flex gap-400 flex-col tablet:flex-row desktop:h-full desktop:flex-row">
-            <div class="flex flex-1/2 flex-col gap-300">
-              <span class="text-preset-7 uppercase text-light">Avg. Distance</span>
-              <span class="text-preset-6 uppercase">{{ data[activeId].distance }}</span>
+          <transition name="fade" mode="out-in">
+            <h2 :key="activeId" class="text-preset-2 uppercase">{{ data[activeId].planet }}</h2>
+          </transition>
+          <transition name="fade" mode="out-in">
+            <p :key="activeId" class="text-preset-9">{{ data[activeId].desc }}</p>
+          </transition>
+          <transition name="fade" mode="out-in">
+            <hr :key="activeId" class="my-8 border-light">
+          </transition>
+          <transition name="fade" mode="out-in">
+            <div :key="activeId" class="flex gap-400 flex-col tablet:flex-row desktop:h-full desktop:flex-row">
+              <div class="flex flex-1/2 flex-col gap-300">
+                <span class="text-preset-7 uppercase text-light">Avg. Distance</span>
+                <span class="text-preset-6 uppercase">{{ data[activeId].distance }}</span>
+              </div>
+              <div class="flex flex-1/2 flex-col gap-300">
+                <span class="text-preset-7 uppercase text-light">Est. Travel Time</span>
+                <span class="text-preset-6 uppercase">{{ data[activeId].travel_time }}</span>
+              </div>
             </div>
-            <div class="flex flex-1/2 flex-col gap-300">
-              <span class="text-preset-7 uppercase text-light">Est. Travel Time</span>
-              <span class="text-preset-6 uppercase">{{ data[activeId].travel_time }}</span>
-            </div>
-          </div>
+          </transition>
         </div>
 
       </div>
@@ -90,5 +100,12 @@ const activeId = ref(0)
 <style scoped>
 .isActive {
   border-bottom: 2px solid lightblue;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>
