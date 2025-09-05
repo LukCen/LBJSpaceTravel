@@ -97,7 +97,6 @@ router.beforeEach(async (to, _from, next) => {
 
   const assets = routeAssets[to.path]
   if (assets) {
-    isPreloading.value = true
     try {
       await preloadAssets(assets)
 
