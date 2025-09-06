@@ -48,7 +48,7 @@ const activeId = ref(0) // matches to the array above - used for controlling con
     <div class="content flex flex-col gap-300 items-center desktop:flex-row-reverse">
       <transition name="fade" mode="out-in">
         <img :key="activeId" :src="isTablet ? data[activeId].imgMobile : data[activeId].imgDesktop" alt=""
-          class="w-full desktop:w-auto">
+          class="w-full desktop:w-auto" fetchpriority="high">
       </transition>
       <div class="pagination flex gap-300 z-10 desktop:flex-col desktop:order-1">
         <button @click="activeId = item.id" :id="item.id"
