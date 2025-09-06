@@ -38,6 +38,22 @@
   overflow-x: hidden;
 }
 
+@font-face{
+  font-family: "Barlow";
+  src: url("/fonts/Barlow-Regular.woff2") format(".woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("/fonts/BarlowCondensed-Regular.woff2") format(".woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bellefair";
+  src: url("/fonts/Bellefair-Regular.woff2") format(".woff2");
+  font-display: swap;
+}
+
 .text-preset-1 {
   @apply font-bellefair text-[80px] tracking-[0px] tablet:text-[144px] desktop:text-[144px] desktop:tracking-[0px]
 }
