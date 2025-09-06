@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face{
+  font-family: 'Barlow';
+  src: url("/fonts/Barlow-Regular.woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url("/fonts/BarlowCondensed-Regular.woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bellefair';
+  src: url("/fonts/Bellefair-Regular.woff2");
+  font-display: swap;
+}
+
 @theme {
 
   /* colors */
@@ -29,29 +45,12 @@
   --font-barlow: 'Barlow', sans-serif;
   --font-barlow-condensed: 'Barlow Condensed', sans-serif;
 
-  
 }
 
 /* typography */
 :root {
   font-display: swap;
   overflow-x: hidden;
-}
-
-@font-face{
-  font-family: "Barlow";
-  src: url("/fonts/Barlow-Regular.woff2") format(".woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Barlow Condensed";
-  src: url("/fonts/BarlowCondensed-Regular.woff2") format(".woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Bellefair";
-  src: url("/fonts/Bellefair-Regular.woff2") format(".woff2");
-  font-display: swap;
 }
 
 .text-preset-1 {
