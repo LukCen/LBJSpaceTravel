@@ -41,7 +41,4 @@ import { isPreloading } from '../main';
   /* zamiast height/width bawisz się skalą */
   background-color: rgba(255, 255, 255, 0.3);
 }
-/* .btn-explore:hover {
-  border: 40px solid lightgray;
-} */
 </style>

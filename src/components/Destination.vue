@@ -101,11 +101,4 @@ const activeId = ref(0)
 .isActive {
   border-bottom: 2px solid lightblue;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
 </style>

@@ -46,7 +46,7 @@ const activeId = ref(0) // matches to the array above - used for controlling con
     </h1>
     <!-- box with content -->
     <div class="content flex flex-col gap-300 items-center desktop:flex-row-reverse">
-      <transition name="tech_fade" mode="out-in">
+      <transition name="fade" mode="out-in">
         <img :key="activeId" :src="isTablet ? data[activeId].imgMobile : data[activeId].imgDesktop" alt=""
           class="w-full desktop:w-auto">
       </transition>
@@ -55,7 +55,7 @@ const activeId = ref(0) // matches to the array above - used for controlling con
           class="h-[40px] w-[40px] rounded-[50%] text-center border-1 border-white cursor-pointer desktop:h-[60px] desktop:w-[60px] "
           :class="{ isActive: activeId === item.id }" v-for="item in data">{{ item.id + 1 }}</button>
       </div>
-      <transition name="tech_fade" mode="out-in">
+      <transition name="fade" mode="out-in">
         <div :key="activeId"
           class="text flex flex-col gap-100 text-center tablet:w-3/4 desktop:text-left desktop:w-1/2">
           <span class="opacity-50 uppercase text-preset-4">The terminology...</span>
@@ -70,13 +70,5 @@ const activeId = ref(0) // matches to the array above - used for controlling con
 .isActive {
   background: var(--color-white);
   color: #000 !important;
-}
-
-.tech_fade-enter-active, .tech_fade-leave-active {
-  transition: opacity .5s
-}
-
-.tech_fade-enter-from, .tech_fade-leave-to {
-  opacity: 0;
 }
 </style>
